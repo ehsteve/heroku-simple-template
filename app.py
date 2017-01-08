@@ -14,7 +14,7 @@ app = flask.Flask(__name__)
 
 @app.route('/')
 def index():
-    text = sunpy.__version__ + '\n' + goes.data.describe()
+    text = sunpy.__version__ + '\n' + str(goes.data.describe())
     current_time = str(datetime.datetime.now())
     return render_template('index.html', text=text, 
 current_time=current_time)
